@@ -23,6 +23,8 @@ SW-DLT ("Shortcuts Wrapper for -DL Tools") is an iOS shortcut that allows you to
 
 - [X] **Priority: enable use of native FFmpeg before a-Shell update**
 
+- [ ] Enable use of any Youtube-dl fork
+
 - [ ] Add quality options for video playlists when usage of ffmpeg.wasm is deprecated
 
 - [ ] Implement feature to read URLs from files
