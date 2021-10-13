@@ -11,7 +11,7 @@ SW-DLT ("Shortcuts Wrapper for -DL Tools") is an iOS shortcut that allows you to
 
 **RoutineHub download link: [RoutineHub](https://routinehub.co/shortcut/7284)**
 
-## Planned Updates
+## Planned Updates (paused until iOS 15 Shortcuts become more stable)
 
 - [X] Add standard progress bar
 
