@@ -1,5 +1,7 @@
 # SW-DLT
 
+### NOTICE: development of Youtube-dl is currently halted, therefore updates for SW-DLT will be paused until further notice.
+
 SW-DLT ("Shortcuts Wrapper for -DL Tools") is an iOS shortcut that allows you to easily use, install and manage the popular and open source utilities [Youtube-dl](https://gitlab.com/dstftw/youtube-dl/) and [Gallery-dl](https://github.com/mikf/gallery-dl). This shortcut aims to be compatible with [YouTube-dl's](https://gitlab.com/dstftw/youtube-dl/-/blob/master/docs/supportedsites.md) & [Gallery-dl's](https://github.com/mikf/gallery-dl/blob/master/docs/supportedsites.rst) collections of supported websites.
 
 ## Main Features
