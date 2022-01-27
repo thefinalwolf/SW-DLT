@@ -14,7 +14,7 @@ import os
 # Modules not shipped with Python, expected to fail on first run
 try:
     import requests
-    import youtube_dl
+    import yt_dlp
 
 except ModuleNotFoundError:
     pass
@@ -44,8 +44,8 @@ class SW_DLT:
             subprocess.getoutput("bookmark shortcuts")
 
         show_progress("", 1, 5)
-        if "Package(s) not found" in subprocess.getoutput("pip show youtube-dl"):
-            subprocess.run("pip -q install --disable-pip-version-check --upgrade youtube-dl")
+        if "Package(s) not found" in subprocess.getoutput("pip show yt-dlp"):
+            subprocess.run("python3 -m pip install --no-deps -U yt-dlp")
             reboot = True
 
         show_progress("", 2, 5)
@@ -85,7 +85,7 @@ class SW_DLT:
     
     @staticmethod
     def erase_dependencies():
-        cleanup_cmds = ("pip uninstall -q -y youtube-dl", "pip uninstall -q -y gallery-dl", "cd", "rm -f ./bin/ffmpeg.wasm", 
+        cleanup_cmds = ("python3 -m pip uninstall yt-dlp", "pip uninstall -q -y gallery-dl", "cd", "rm -f ./bin/ffmpeg.wasm", 
             "rm -f ./bin/ffprobe.wasm")
         for i in range(len(cleanup_cmds)):
             subprocess.run(cleanup_cmds[i])
@@ -143,7 +143,7 @@ class SW_DLT:
 
     def single_download(self, dl_options):
         # Uses YouTube-dl to download single video or audio items
-        with youtube_dl.YoutubeDL(dl_options) as vid_obj:
+        with yt_dlp.YoutubeDL(dl_options) as vid_obj:
             meta_data = vid_obj.extract_info(self.media_url, download=False)
             vid_title = meta_data.get("title", self.date_id) #2nd argument is alternate title
             vid_obj.download([self.media_url])
@@ -241,7 +241,7 @@ class SW_DLT:
             }
 
         try:
-            with youtube_dl.YoutubeDL(dl_options) as pl_obj:
+            with yt_dlp.YoutubeDL(dl_options) as pl_obj:
                 meta_data = pl_obj.extract_info(self.media_url, download=False)
                 pl_title = meta_data.get("title", self.date_id) #2nd argument is alternate title
                 pl_obj.download([self.media_url])
